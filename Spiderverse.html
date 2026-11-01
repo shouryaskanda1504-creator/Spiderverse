@@ -411,13 +411,17 @@ function toast(m){
   clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2600);
 }
 const row=(k,v)=>{const d=document.createElement('div');d.textContent=k;const b=document.createElement('b');if(v instanceof Node)b.appendChild(v);else b.textContent=v;d.appendChild(b);return d;};
-const coinLabel=n=>{const label=document.createElement('span'),icon=document.createElement('i');icon.className='fa-solid fa-coin';label.append(icon,document.createTextNode(` ${n}`));return label;};
+const coinLabel=n=>{const label=document.createElement('span'),icon=document.createElement('i');icon.className='fa-solid fa-coins';label.append(icon,document.createTextNode(` ${n}`));return label;};
 
 openers.menu=renderMenu;
 function renderMenu(){
   const hi=$('menuHi');
   if(!save.name){hi.textContent='Choose a username to start';return;}
-  hi.replaceChildren(document.createTextNode(`Welcome, ${save.name}  •  `),coinLabel(save.coins),document.createTextNode(`  •  Best ${Math.floor(save.best)}`));
+  hi.replaceChildren(
+    document.createTextNode(`Welcome, ${save.name}  •  `),
+    coinLabel(save.coins),
+    document.createTextNode(`  •  Best ${Math.floor(save.best)}`)
+  );
 }
 $('bPlay').onclick=()=>{
   if(!save.name){afterName=startGame;go('profile');}else startGame();
