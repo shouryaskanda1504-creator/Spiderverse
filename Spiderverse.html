@@ -13,6 +13,15 @@ canvas#c{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);display:
 .screen.on{display:flex}
 .panel{margin:auto;width:min(480px,100%);background:linear-gradient(160deg,#171c42,#0c0f26);border:2px solid #e23a4a;border-radius:18px;padding:18px 20px;text-align:center;box-shadow:0 0 40px rgba(226,58,74,.35)}
 .panel.wide{width:min(640px,100%)}
+#s-credits .credit-kicker{margin:0 0 6px;color:#e23a4a;font-size:11px;font-weight:800;letter-spacing:2px}
+#s-credits h2{margin-bottom:4px}
+#s-credits .credit-intro{margin:0 0 18px;color:rgba(255,255,255,.68);font-size:14px}
+#s-credits .credit-list{display:grid;gap:10px;text-align:left}
+#s-credits .credit-card{display:flex;align-items:center;gap:12px;padding:13px;background:#1b2048;border:1px solid #2d3470;border-radius:12px}
+#s-credits .credit-icon{display:grid;place-items:center;flex:0 0 42px;height:42px;border-radius:12px;background:#2f4fd8;font-size:21px}
+#s-credits .credit-card:first-child .credit-icon{background:#e23a4a}
+#s-credits .credit-name{margin:0 0 4px;font-size:15px;font-weight:800}
+#s-credits .credit-role{margin:0;color:rgba(255,255,255,.67);font-size:12px;line-height:1.4}
 h1{margin:0 0 4px;font-size:44px;letter-spacing:3px;color:#e23a4a;text-shadow:0 0 18px rgba(226,58,74,.6)}
 h1 span{color:#4f7bff}
 h2{margin:0 0 10px;font-size:26px}h3{margin:0 0 4px}
@@ -79,6 +88,7 @@ input{width:100%;padding:12px;border-radius:10px;border:2px solid #2f4fd8;backgr
   <button class="btn" id="bPlay">▶ Play</button>
   <div class="row"><button class="btn alt" data-go="shop">🕸 Suit Shop</button><button class="btn alt" data-go="board">🏆 Leaderboard</button></div>
   <div class="row"><button class="btn dim" data-go="profile">👤 Profile</button><button class="btn dim" data-go="settings">⚙ Settings</button></div>
+  <div class="row"><button class="btn dim" data-go="credits">👤 Credits</button></div>
   <p class="hint">A/D move · SPACE jump · W swing · E attack · P pause</p>
 </div></div>
 
@@ -133,6 +143,23 @@ input{width:100%;padding:12px;border-radius:10px;border:2px solid #2f4fd8;backgr
   <button class="btn alt" id="tSfx"></button>
   <button class="btn alt" id="tMus"></button>
   <button class="btn dim" id="tReset">Reset all progress</button>
+  <button class="btn dim" data-go="back">← Back</button>
+</div></div>
+
+<div class="screen" id="s-credits"><div class="panel">
+  <p class="credit-kicker">THE TEAM BEHIND THE WEB</p>
+  <h2>🕸️ Credits</h2>
+  <p class="credit-intro">Meet the people who brought Spiderverse to life.</p>
+  <div class="credit-list">
+    <div class="credit-card">
+      <div class="credit-icon" aria-hidden="true">🕷️</div>
+      <div><p class="credit-name">Shourya / Viking</p><p class="credit-role">Owner & Developer</p></div>
+    </div>
+    <div class="credit-card">
+      <div class="credit-icon" aria-hidden="true">⚡</div>
+      <div><p class="credit-name">ChadwickBroski</p><p class="credit-role">Developer & Database Owner</p></div>
+    </div>
+  </div>
   <button class="btn dim" data-go="back">← Back</button>
 </div></div>
 
