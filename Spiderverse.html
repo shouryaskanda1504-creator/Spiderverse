@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" crossorigin="anonymous" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Spiderverse</title>
 <style>
@@ -85,82 +86,81 @@ input{width:100%;padding:12px;border-radius:10px;border:2px solid #2f4fd8;backgr
 <div class="screen" id="s-menu"><div class="panel">
   <h1>SPIDER<span>VERSE</span></h1>
   <p class="sub" id="menuHi"></p>
-  <button class="btn" id="bPlay">▶ Play</button>
-  <div class="row"><button class="btn alt" data-go="shop">🕸 Suit Shop</button><button class="btn alt" data-go="board">🏆 Leaderboard</button></div>
-  <div class="row"><button class="btn dim" data-go="profile">👤 Profile</button><button class="btn dim" data-go="settings">⚙ Settings</button></div>
-  <div class="row"><button class="btn dim" data-go="credits">👤 Credits</button></div>
+  <button class="btn" id="bPlay"><i class="fa-solid fa-play"></i> Play</button>
+  <div class="row"><button class="btn alt" data-go="shop"><i class="fa-solid fa-spider"></i> Suit Shop</button><button class="btn alt" data-go="board"><i class="fa-solid fa-ranking-star"></i> Leaderboard</button></div>
+  <div class="row"><button class="btn dim" data-go="profile"><i class="fa-solid fa-user"></i> Profile</button><button class="btn dim" data-go="settings"><i class="fa-solid fa-gear"></i> Settings</button></div>
+  <div class="row"><button class="btn dim" data-go="credits"><i class="fa-solid fa-users"></i> Credits</button></div>
   <p class="hint">A/D move · SPACE jump · W swing · E attack · P pause</p>
 </div></div>
 
 <div class="screen" id="s-pause"><div class="panel">
   <h2>⏸ Paused</h2>
-  <button class="btn" id="bResume">▶ Resume</button>
-  <button class="btn alt" id="bRestart">↻ Restart</button>
-  <button class="btn dim" data-go="settings">⚙ Settings</button>
-  <button class="btn dim" id="bQuit">Quit to menu</button>
+  <button class="btn" id="bResume"><i class="fa-solid fa-play"></i> Resume</button>
+  <button class="btn alt" id="bRestart"><i class="fa-solid fa-redo"></i> Restart</button>
+  <button class="btn dim" data-go="settings"><i class="fa-solid fa-gear"></i> Settings</button>
+  <button class="btn dim" id="bQuit"><i class="fa-solid fa-arrow-left"></i> Quit to menu</button>
 </div></div>
 
 <div class="screen" id="s-over"><div class="panel">
   <h2>GAME OVER</h2>
   <div id="overBadge"></div>
   <div class="stats" id="overStats"></div>
-  <button class="btn" id="bAgain">↻ Play again</button>
-  <div class="row"><button class="btn alt" data-go="shop">🕸 Shop</button><button class="btn alt" data-go="board">🏆 Board</button></div>
-  <button class="btn dim" id="bMenu">Menu</button>
+  <button class="btn" id="bAgain"><i class="fa-solid fa-redo"></i> Play again</button>
+  <div class="row"><button class="btn alt" data-go="shop"><i class="fa-solid fa-spider"></i> Shop</button><button class="btn alt" data-go="board"><i class="fa-solid fa-ranking-star"></i> Board</button></div>
+  <button class="btn dim" id="bMenu"><i class="fa-solid fa-home"></i> Menu</button>
 </div></div>
 
 <div class="screen" id="s-shop"><div class="panel wide">
-  <h2>🕸 Suit Shop</h2>
-  <div class="coinbar">🪙 <b id="shopCoins">0</b></div>
+  <h2><i class="fa-solid fa-spider"></i> Suit Shop</h2>
+  <div class="coinbar"><i class="fa-solid fa-coins"></i> <b id="shopCoins">0</b></div>
   <div class="shopTop">
     <canvas id="prev" width="180" height="230"></canvas>
     <div class="info"><h3 id="pName"></h3><p id="pDesc"></p><p class="tag" id="pReq"></p><button class="btn" id="pBtn"></button></div>
   </div>
   <div class="grid" id="suitGrid"></div>
-  <button class="btn dim" data-go="back">← Back</button>
+  <button class="btn dim" data-go="back"><i class="fa-solid fa-arrow-left"></i> Back</button>
 </div></div>
 
 <div class="screen" id="s-board"><div class="panel wide">
-  <h2>🏆 Leaderboard</h2>
+  <h2><i class="fa-solid fa-ranking-star"></i> Leaderboard</h2>
   <p class="sub">Highest score first, coins break ties. The board is erased every 24 hours.</p>
   <p class="tag" id="lbTimer"></p>
   <div class="lb" id="lbList"></div>
-  <div class="row"><button class="btn alt" id="lbRefresh">⟳ Refresh</button><button class="btn dim" data-go="back">← Back</button></div>
+  <div class="row"><button class="btn alt" id="lbRefresh"><i class="fa-solid fa-sync"></i> Refresh</button><button class="btn dim" data-go="back"><i class="fa-solid fa-arrow-left"></i> Back</button></div>
 </div></div>
 
 <div class="screen" id="s-profile"><div class="panel">
-  <h2 id="prTitle">👤 Profile</h2>
+  <h2 id="prTitle"><i class="fa-solid fa-user"></i> Profile</h2>
   <canvas id="prHero" width="120" height="150"></canvas>
   <input id="nameIn" maxlength="16" placeholder="Username (3–16 characters)" autocomplete="off" autocapitalize="off" spellcheck="false">
   <div class="err" id="nameErr"></div>
   <div class="stats" id="prStats"></div>
   <button class="btn" id="nameSave">Save</button>
-  <button class="btn dim" id="prBack" data-go="back">← Back</button>
+  <button class="btn dim" id="prBack" data-go="back"><i class="fa-solid fa-arrow-left"></i> Back</button>
 </div></div>
 
 <div class="screen" id="s-settings"><div class="panel">
-  <h2>⚙ Settings</h2>
+  <h2><i class="fa-solid fa-gear"></i> Settings</h2>
   <button class="btn alt" id="tSfx"></button>
   <button class="btn alt" id="tMus"></button>
   <button class="btn dim" id="tReset">Reset all progress</button>
-  <button class="btn dim" data-go="back">← Back</button>
+  <button class="btn dim" data-go="back"><i class="fa-solid fa-arrow-left"></i> Back</button>
 </div></div>
 
 <div class="screen" id="s-credits"><div class="panel">
-  <p class="credit-kicker">THE TEAM BEHIND THE WEB</p>
-  <h2>🕸️ Credits</h2>
+  <h2><i class="fa-solid fa-users"></i> Credits</h2>
   <p class="credit-intro">Meet the people who brought Spiderverse to life.</p>
   <div class="credit-list">
     <div class="credit-card">
-      <div class="credit-icon" aria-hidden="true">🕷️</div>
+      <div class="credit-icon" aria-hidden="true"><i class="fa-solid fa-spider"></i></div>
       <div><p class="credit-name">Shourya / Viking</p><p class="credit-role">Owner & Developer</p></div>
     </div>
     <div class="credit-card">
-      <div class="credit-icon" aria-hidden="true">⚡</div>
+      <div class="credit-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
       <div><p class="credit-name">ChadwickBroski</p><p class="credit-role">Developer & Database Owner</p></div>
     </div>
   </div>
-  <button class="btn dim" data-go="back">← Back</button>
+  <button class="btn dim" data-go="back"><i class="fa-solid fa-arrow-left"></i> Back</button>
 </div></div>
 
 <script type="module">
@@ -282,11 +282,11 @@ async function persist(){
       save
     )
   }
-  catch(e){if(storageOK){storageOK=false;toast('⚠ Saving is unavailable – progress will not be kept');}}
+  catch(e){if(storageOK){storageOK=false;toast(`<i class="fa-solid fa-triangle-exclamation"></i> Saving is unavailable – progress will not be kept`);}}
 }
 const owned=id=>Array.isArray(save.owned)&&save.owned.includes(id);
 function checkUnlocks(){
-  SUITS.forEach(s=>{if(s.test&&!owned(s.id)&&s.test(save)){save.owned.push(s.id);toast('🎉 New suit unlocked: '+s.name+'!');persist();}});
+  SUITS.forEach(s=>{if(s.test&&!owned(s.id)&&s.test(save)){save.owned.push(s.id);toast(`<i class="fa-solid fa-rocket"></i> New suit unlocked: ${s.name}!`);persist();}});
 }
 
 /* ================= LEADERBOARD (local, erased every 24h) ================= */
@@ -410,11 +410,14 @@ function toast(m){
   const t=$('toast');t.textContent=m;t.classList.add('on');
   clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2600);
 }
-const row=(k,v)=>{const d=document.createElement('div');d.textContent=k;const b=document.createElement('b');b.textContent=v;d.appendChild(b);return d;};
+const row=(k,v)=>{const d=document.createElement('div');d.textContent=k;const b=document.createElement('b');if(v instanceof Node)b.appendChild(v);else b.textContent=v;d.appendChild(b);return d;};
+const coinLabel=n=>{const label=document.createElement('span'),icon=document.createElement('i');icon.className='fa-solid fa-coin';label.append(icon,document.createTextNode(` ${n}`));return label;};
 
 openers.menu=renderMenu;
 function renderMenu(){
-  $('menuHi').textContent=save.name?('Welcome, '+save.name+'  •  🪙 '+save.coins+'  •  Best '+Math.floor(save.best)):'Choose a username to start';
+  const hi=$('menuHi');
+  if(!save.name){hi.textContent='Choose a username to start';return;}
+  hi.replaceChildren(document.createTextNode(`Welcome, ${save.name}  •  `),coinLabel(save.coins),document.createTextNode(`  •  Best ${Math.floor(save.best)}`));
 }
 $('bPlay').onclick=()=>{
   if(!save.name){afterName=startGame;go('profile');}else startGame();
@@ -423,9 +426,9 @@ $('bPlay').onclick=()=>{
 /* ---- profile ---- */
 openers.profile=renderProfile;
 function renderProfile(){
-  $('prTitle').textContent=afterName?'Choose your username':'👤 Profile';
+  $('prTitle').innerHTML=afterName?'Choose your username':`<i class="fa-solid fa-user"></i> Profile`;
   $('nameIn').value=save.name;$('nameErr').textContent='';
-  $('nameSave').textContent=afterName?'Save & Play ▶':'Save';
+  $('nameSave').textContent=afterName?`Save & Play <i class="fa-solid fa-play"></i>`:'Save';
   const st=save.stats,box=$('prStats');box.textContent='';
   [['Best score',Math.floor(save.best)],['Best level',save.bestLevel],['Best distance',save.bestDist+' m'],['Coins',save.coins],
    ['Enemies beaten',st.kills],['Mini-bosses',st.minibosses],['Bosses',st.bosses],['Runs',st.runs]].forEach(r=>box.appendChild(row(r[0],r[1])));
@@ -468,7 +471,7 @@ function renderBoard(){
       const a=document.createElement('span');a.textContent=['🥇','🥈','🥉'][i]||('#'+(i+1));
       const n=document.createElement('span');n.textContent=r.name;
       const s=document.createElement('b');s.textContent=Number(r.score).toLocaleString();
-      const c=document.createElement('span');c.className='lc';c.textContent='🪙'+r.coins+' · Lv'+r.level;
+      const c=document.createElement('span');c.className='lc';c.innerHTML=`<i class="fa-solid fa-coins"></i> ${r.coins} · Lv${r.level}`;
       d.append(a,n,s,c);box.appendChild(d);
     });
   }).catch(()=>{box.textContent='⚠ Could not load the leaderboard. Tap Refresh to try again.';});
@@ -487,7 +490,7 @@ function renderShop(){
     const cv2=document.createElement('canvas');cv2.width=64;cv2.height=80;d.appendChild(cv2);
     const l=document.createElement('div');l.className='cl';l.textContent=s.name;d.appendChild(l);
     const st=document.createElement('div');st.className='cs';
-    st.textContent=save.equipped===s.id?'EQUIPPED':owned(s.id)?'OWNED':s.cost?('🪙 '+s.cost):('🔒 '+s.ach);
+    st.innerHTML=save.equipped===s.id?'EQUIPPED':owned(s.id)?'OWNED':s.cost?`<i class="fa-solid fa-coins"></i> ${s.cost}`:`<i class="fa-solid fa-lock"></i> ${s.ach}`;
     d.appendChild(st);
     d.onclick=()=>{shopSel=s.id;renderShop();};
     grid.appendChild(d);
@@ -495,10 +498,10 @@ function renderShop(){
   });
   const s=suit(shopSel),b=$('pBtn');
   $('pName').textContent=s.name;$('pDesc').textContent=s.desc;
-  $('pReq').textContent=owned(s.id)?(save.equipped===s.id?'Currently equipped':'Owned'):s.cost?('Price: 🪙 '+s.cost):('🔒 Unlock: '+s.ach);
+  $('pReq').innerHTML=owned(s.id)?(save.equipped===s.id?'Currently equipped':'Owned'):s.cost?`Price: <i class="fa-solid fa-coins"></i> ${s.cost}`:`🔒 Unlock: ${s.ach}`;
   if(save.equipped===s.id){b.textContent='Equipped ✓';b.disabled=true;}
   else if(owned(s.id)){b.textContent='Equip';b.disabled=false;}
-  else if(s.cost){const need=s.cost-save.coins;b.textContent=need>0?('Need '+need+' more 🪙'):('Buy for '+s.cost+' 🪙');b.disabled=need>0;}
+  else if(s.cost){const need=s.cost-save.coins;b.innerHTML=need>0?(`Need ${need} more <i class="fa-solid fa-coins"></i>`):(`Buy for ${s.cost} <i class="fa-solid fa-coins"></i>`);b.disabled=need>0;}
   else{b.textContent='Locked';b.disabled=true;}
 }
 $('pBtn').onclick=()=>{
@@ -532,9 +535,9 @@ openers.over=renderOver;
 function renderOver(){
   if(!G||!G.result)return;
   const r=G.result;
-  $('overBadge').innerHTML=r.newBest?'<span class="badge">🏆 NEW BEST!</span>':'';
+  $('overBadge').innerHTML=r.newBest?`<span class="badge"><i class="fa-solid fa-trophy"></i> NEW BEST!</span>`:'';
   const box=$('overStats');box.textContent='';
-  [['Score',r.score.toLocaleString()],['Coins earned','🪙 '+r.coins],['Level reached',r.level],['Distance',r.dist+' m'],['Best score',Math.floor(save.best).toLocaleString()],['Wallet','🪙 '+save.coins]].forEach(x=>box.appendChild(row(x[0],x[1])));
+  [['Score',r.score.toLocaleString()],['Coins earned',coinLabel(r.coins)],['Level reached',r.level],['Distance',r.dist+' m'],['Best score',Math.floor(save.best).toLocaleString()],['Wallet',coinLabel(save.coins)]].forEach(x=>box.appendChild(row(x[0],x[1])));
 }
 
 /* ================= GAME ================= */
